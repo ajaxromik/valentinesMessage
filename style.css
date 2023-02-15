@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 100vh;
+  background: #8f0707;
+}
+.box:hover {
+  height: 450px;
+}
+.box {
+  position: relative;
+  width: 534px;
+  height: 400px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px;
+  background: #ff8080;
+  transition: 0.5s;
+  transition-timing-function: cubic-bezier(0.7, 0.05, 0.3, 0.95);
+}
+.box .imgBox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: inherit;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.box .imgBox img {
+  width: 514px;
+  height: 380px;
+  opacity: 0;
+  transition: 0.5s;
+  overflow: hidden;
+  border-radius: 20px;
+}
+.box:nth-child(3) .imgBox img {
+  border-radius: 50px;
+}
+.box:hover .imgBox img {
+  opacity: 1;
+}
+.box:before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: #ff8080;
+  z-index: -1;
+}
+.box:after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: #ff8080;
+  z-index: -2;
+  filter: blur(45px);
+}
+.box:before, .box:after,
+.box:nth-child(4):before,
+.box:nth-child(4):after {
+  background: linear-gradient(45deg,	#ff1fd4,#f75050,#f1a8ff);
+  border-radius: 15px;
+}
+.box:nth-child(2):before, .box:nth-child(2):after,
+.box:nth-child(3):before,
+.box:nth-child(3):after {
+  background: linear-gradient(135deg,#ff8fab,#f75050,	#ff4aae);
+}
+.box .content {
+  position: absolute;
+  bottom: 0;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  opacity: 0;
+  transition: 0.2s;
+  transition-delay: 0.3s;
+}
+.box:hover .content {
+  opacity: 1;
+}
+.box .content h2 {
+  font-size: 20px;
+  color: #760606;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 1px;
+}
